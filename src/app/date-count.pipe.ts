@@ -23,4 +23,3 @@ export class DateCountPipe implements PipeTransform {
   }
 
 }
-© 2020 GitHub, Inc.
