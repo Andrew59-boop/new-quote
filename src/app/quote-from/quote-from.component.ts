@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Quote } from '../quote';
+
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-quote-from',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quote-from.component.css']
 })
 export class QuoteFromComponent implements OnInit {
+  newQuote =new Quote('',"","",new Date())
+  @Output() addQuote = new EventEmitter<Quote>()
 
-  constructor() { }
+  submitQuote(){
+    this.addQuote.emit(this.newQuote);
+}
 
-  ngOnInit(): void {
-  }
+constructor() { }
+
+ngOnInit() {
+}
 
 }

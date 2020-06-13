@@ -1,1 +1,45 @@
-<p>quote-from works!</p>
+<p>quote-from <div class="container">
+        
+    <div class="row">
+          <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+
+          
+            <div class="form-group">
+                <h2><label for="quote">QUOTE</label></h2>
+                <textarea class="form-control" id="quote" rows="4" [(ngModel)]="newQuote.description" name="description" #quote="ngModel" required></textarea>
+                <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+                    <p> Write the quote</p>
+
+                </div>
+                    
+            </div>
+            <div class="form-group">
+                <h2><label for="author"><strong>Author</strong></label></h2>
+                <input type="text"  class="form-control" id="author" [(ngModel)]="newQuote.name" name="name" #author="ngModel" required>
+
+                <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                    <p> Author is Required</p>
+                  </div>
+                     
+                </div>
+
+            <div class="form-group">
+                <h2><label for="person"><strong>Who submitted</strong></label></h2>
+                <input type="text"  class="form-control" id="author" [(ngModel)]="newQuote.person" name="person" #person="ngModel" required>
+
+                <div [hidden]="person.valid || person.pristine" class="alert alert-danger">
+                    <p> Name is Required</p>
+
+                </div>
+
+  
+                </div>
+
+                
+
+            <button type="Submit"  (click)="submitQuote()" class="btn btn-success btn-lg">add quote</button>
+
+        </form>
+    </div>
+    
+</div>works!</p>
